@@ -48,9 +48,9 @@ This package enhances `dbt_utils.generate_surrogate_key` with automatic input tr
 packages:
   - package: dbt-labs/dbt_utils
     version: 1.1.1
-  
-  - git: "https://github.com/Ahmed-Gomaa1/dbt-surrogate-key-utils"
-    revision: v1.0.0  # Use latest release tag
+
+  - package: Ahmed-Gomaa1/dbt-surrogate-key-utils
+    version: main  # Or specific release tag
 ```
 
 ### Step 2: Configure Dispatch
@@ -233,9 +233,9 @@ select
 from test_data
 ```
 
-**Expected results:**
-- `key_no_trim`: Different for id 1 and 2
-- `key_with_trim`: **Same** for id 1 and 2 ✅
+**Actual results after fix:**
+- `key_no_trim`: Different for id 1 and 2 (as expected)
+- `key_with_trim`: **Same** for id 1 and 2 ✅ (now working correctly!)
 
 ---
 
